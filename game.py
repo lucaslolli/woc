@@ -1,5 +1,5 @@
 '''
-World of CodeCraft is a command line text adventure game  written in Pyhton by Caique Fabris and Lou Espiral.
+World of CodeCraft is a command line text adventure game written in Pyhton by Caique Fabris and Lou Espiral.
 '''
 
 import classes

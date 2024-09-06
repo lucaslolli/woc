@@ -1,6 +1,3 @@
-# import classes
-
-
 welcome = '''
     #####################################\n
     #   Welcome to World of CodeCraft!  #\n
@@ -9,32 +6,29 @@ welcome = '''
     #####################################
 '''
 
-# xuxa: write intro
+# Caique: write intro
 intro = '''
     Oh no! The Kingdom is in upheaval etc etc...
 '''
 
 help_text = '''Below are the commands in the game.
 Press:
-[0] to display this HELP
-[1] to LOOK around
-[2] to GO to a different area
-[3] to INTERACT with people and objects
-[4] to ATTACK the current enemy
-[5] to QUIT the game
+[0] or [H] to display this HELP
+[1] or [L] to LOOK around
+[2] or [G] to GO to a different area
+[3] or [I] to INTERACT with people and objects
+[4] or [A] to ATTACK the current enemy
+[5] or [Q] to QUIT the game
 Then press Enter to confirm.'''
 
 short_text = '''What do you want to do?
 [0] HELP   [1] LOOK   [2] GO   [3] INTERACT   [4] ATTACK   [5] QUIT
 '''
-
+# alternative:
+#  0 [H]ELP   1 [L]OOK   2 [G]O   3 [I]NTERACT   4 [A]TTACK   5 [Q]UIT
 
 location_list = [
-    ('Firewall Quarantine', 'It is dark and damp and blablabla...', [1], []),
-    ('Terminal Square', '[Description of Terminal Square]', [0], []) 
-    # xuxa: fill in the locations
+    ('Firewall Quarantine', 'It is hot in here.', [1], []),
+    ('Terminal Square', 'It is square and terminal.', [0], []) 
+    # Caique: fill in the locations
     ]
-
-# rooms = [classes.Room(*object) for object in room_list]
-
-# caterpie = classes.Enemy('Caterpie', 20, 5)

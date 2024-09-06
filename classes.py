@@ -8,7 +8,8 @@ class Game:
         self.count_six = count_six
         return
     
-    def slow_print(self, text, delay=0): # delay=0 for quick test. Correct: delay=0.018
+    def slow_print(self, text, delay=0.018):
+        # delay=0 for quick test. Correct: delay=0.018
         for char in str(text):
             sys.stdout.write(char)
             sys.stdout.flush()
@@ -19,41 +20,43 @@ class Game:
         self.slow_print('You asked for help. No problem!')
         self.slow_print(data.help_text)
 
-    def exit(self):
-        self.slow_print('\nThanks for playing World of CodeCraft! See you next time!\n')
+    def quit_game(self):
+        self.slow_print('Thanks for playing World of CodeCraft! See you next time!\n')
         quit()
 
     def six(self):
         if self.count_six == 3:
-            self.slow_print('\nOh no! You entered 666! The beast has come to get you! Better luck next time!')
-            exit(self)
+            self.slow_print('Oh no! You entered 666! The beast has come to get you! Better luck next time!')
+            self.quit_game()
         else:
-            self.slow_print('\nThere is no option 6. Or is there?')
+            self.slow_print('There is no option 6. Or is there?')
             self.count_six += 1
 
     def choice(self, hero, world, text=data.short_text):
         print(text)
         try:
-            option = int(input())
+            option = input()
             if option != 6:
                 self.count_six = 0
             match option:
-                case 0:
+                case '0' | 'h' | 'H':
                     self.game_help()
-                case 1:
+                case '1' | 'l' | 'L':
                     hero.look(self)
-                case 2:
+                case '2' | 'g' | 'G':
                     hero.go(self, world)
-                case 3:
+                case '3' | 'i' | 'I':
                     hero.interact(self)
-                case 4:
+                case '4' | 'a' | 'A':
                     hero.attack(hero.enemy, self)
-                case 5:
-                    self.exit()
-                case 6:
+                case '5' | 'q' | 'Q':
+                    self.quit_game()
+                case '6':
                     self.six()
+                case _:
+                    raise ValueError
         except ValueError:
-            print('\nYou did not enter a valid number. Please try again.')
+            print('You did not enter a valid number or letter. Please try again.')
             print(text)
         self.choice(hero, world)
 
@@ -105,7 +108,7 @@ class Hero:
         game.slow_print('Where do you want to go?')
         for i, n in enumerate(self.current_location.connections, 1):
             game.slow_print(f'[{i}] {world.locations[n].name}')
-        print('\n')
+        print()
         try:
             number = int(input())
             if number in range(1, len(self.current_location.connections) + 1):
