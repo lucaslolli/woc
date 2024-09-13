@@ -144,11 +144,11 @@ class Hero:
     def interact(self, game, world):
         slow_print('What do you want to interact with?')
         interactibles = self.current_location.npcs + self.current_location.inspectionables
-        for n, item in enumerate(interactibles, 1):
+        for n, item in enumerate(interactibles):
             slow_print(f'[{n}] {item.name}')
             print()
         try:
-            chosen_item = (interactibles)[int(input()) - 1]
+            chosen_item = interactibles[int(input())]
             chosen_item.action(game, self, world)
         except (ValueError, IndexError):
             slow_print('You did not enter a valid number.')
