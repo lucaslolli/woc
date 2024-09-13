@@ -1,4 +1,4 @@
-welcome = '''
+WELCOME = '''
     #####################################\n
     #   Welcome to World of CodeCraft!  #\n
     #     A text adventure game by      #\n
@@ -7,11 +7,15 @@ welcome = '''
 '''
 
 # Caique: write intro
-intro = '''
+INTRO = '''
     Oh no! The Kingdom is in upheaval etc etc...
 '''
 
-help_text = '''Below are the commands in the game.
+SHORT_TEXT = '''What do you want to do?
+[0] HELP   [1] LOOK   [2] GO   [3] INTERACT   [4] ATTACK   [5] QUIT
+'''
+
+HELP_TEXT = '''Below are the commands in the game.
 Press:
 [0] or [H] to display this HELP
 [1] or [L] to LOOK around
@@ -21,11 +25,7 @@ Press:
 [5] or [Q] to QUIT the game
 Then press Enter to confirm.'''
 
-short_text = '''What do you want to do?
-[0] HELP   [1] LOOK   [2] GO   [3] INTERACT   [4] ATTACK   [5] QUIT
-'''
-
-location_list = [
+LOCATION_LIST = [
     ['Firewall Quarantine', 'It is hot in here. There is an old man sitting in the corner.', [1], [
         ('Prisoner', [
             'Wow!',
@@ -43,6 +43,6 @@ location_list = [
     ], [
         # inspectionables
     ]] 
-    
+
     # Caique: fill in the locations
     ]

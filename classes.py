@@ -34,7 +34,7 @@ class Game:
             slow_print('There is no option 6. Or is there?')
             self.count_six += 1
 
-    def choice(self, hero, world, text=data.short_text):
+    def choice(self, hero, world, text=data.SHORT_TEXT):
         slow_print(text)
         try:
             option = input()
@@ -64,7 +64,7 @@ class Game:
 
 
 class World:
-    def __init__(self, locations=data.location_list):
+    def __init__(self, locations=data.LOCATION_LIST):
         self.locations = [Location(*location) for location in locations]
 
 
