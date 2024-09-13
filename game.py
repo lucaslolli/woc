@@ -22,8 +22,8 @@ hero = classes.Hero(current_location=world.locations[0])
 world.locations[0].visited = True
 
 # Display initial text
-game.slow_print(classes.data.welcome)
-game.slow_print(classes.data.help_text)
-game.slow_print(classes.data.intro)
+classes.slow_print(classes.data.welcome)
+classes.slow_print(classes.data.help_text)
+classes.slow_print(classes.data.intro)
 hero.look(game)
 game.choice(hero, world)
