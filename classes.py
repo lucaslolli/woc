@@ -18,11 +18,11 @@ class Game:
         self.count_six = count_six
         return
     
-    def game_help(self):
+    def game_help():
         slow_print('You asked for help. No problem!')
         slow_print(data.help_text)
 
-    def quit_game(self):
+    def quit_game():
         slow_print('Thanks for playing World of CodeCraft! See you next time!\n')
         quit()
 
@@ -44,7 +44,7 @@ class Game:
                 case '0' | 'h' | 'H':
                     self.game_help()
                 case '1' | 'l' | 'L':
-                    hero.look(self)
+                    hero.look()
                 case '2' | 'g' | 'G':
                     hero.go(self, world)
                 case '3' | 'i' | 'I':
@@ -78,7 +78,7 @@ class Location:
         self.enemies = None
         self.visited = visited
 
-    def appear_enemy(self, game, hero):
+    def appear_enemy(self, hero):
         die_roll = random.randint(0, 10)
         if die_roll < 5:
             hero.enemy = Enemy()
@@ -119,14 +119,14 @@ class Hero:
         self.current_location = current_location
         self.enemy = None
 
-    def you_are_in(self, game):
+    def you_are_in(self):
         slow_print(f'You are in {self.current_location.name}.')    
 
-    def look(self, game):
-        self.you_are_in(game)
+    def look(self):
+        self.you_are_in()
         slow_print(self.current_location.description)
     
-    def go(self, game, world):
+    def go(self, world):
         slow_print('Where do you want to go?')
         for i, n in enumerate(self.current_location.connections, 1):
             slow_print(f'[{i}] {world.locations[n].name}')
@@ -136,11 +136,11 @@ class Hero:
             if number in range(1, len(self.current_location.connections) + 1):
                 self.current_location = world.locations[self.current_location.connections[i - 1]]
                 if world.locations[world.locations.index(self.current_location)].visited:
-                    self.you_are_in(game)
+                    self.you_are_in()
                 else:
-                    self.look(game)
+                    self.look()
                     world.locations[world.locations.index(self.current_location)].visited = True
-                self.current_location.appear_enemy(game, self)
+                self.current_location.appear_enemy(self)
             else:
                 raise ValueError
         except ValueError:
@@ -158,7 +158,7 @@ class Hero:
         except (ValueError, IndexError):
             slow_print('You did not enter a valid number.')
     
-    def attack(self, enemy, game):
+    def attack(self, enemy):
         if enemy:
             print(f'You attack {enemy.name}!')
             enemy.hp -= self.damage
