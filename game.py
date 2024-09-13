@@ -4,7 +4,7 @@ World of CodeCraft is a command line text adventure game written in Pyhton by Ca
 
 import classes
 
-prisoner = classes.NPC('Prisoner', [
+prisoner = ('Prisoner', [
     'Wow!',
     'Hi!',
     'Bye!'
@@ -24,5 +24,5 @@ world.locations[0].visited = True
 classes.slow_print(classes.data.welcome)
 classes.slow_print(classes.data.help_text)
 classes.slow_print(classes.data.intro)
-hero.look(game)
+hero.look()
 game.choice(hero, world)

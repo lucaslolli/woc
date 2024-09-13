@@ -26,7 +26,18 @@ short_text = '''What do you want to do?
 '''
 
 location_list = [
-    ['Firewall Quarantine', 'It is hot in here. There is an old man sitting in the corner.', [1], []],
-    ['Terminal Square', 'It is square and terminal.', [], []] 
+    ['Firewall Quarantine', 'It is hot in here. There is an old man sitting in the corner.', [1], [
+        # npcs
+    ], [
+        # inspectionables
+    ]],
+    
+    ['Terminal Square', 'It is square and terminal.', [
+        # connections
+    ], [
+        # npcs
+    ], [
+        # inspectionables
+    ]] 
     # Caique: fill in the locations
     ]

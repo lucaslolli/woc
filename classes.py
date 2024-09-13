@@ -18,11 +18,11 @@ class Game:
         self.count_six = count_six
         return
     
-    def game_help():
+    def game_help(self):
         slow_print('You asked for help. No problem!')
         slow_print(data.help_text)
 
-    def quit_game():
+    def quit_game(self):
         slow_print('Thanks for playing World of CodeCraft! See you next time!\n')
         quit()
 
@@ -63,18 +63,17 @@ class Game:
         self.choice(hero, world)
 
 
-class Enemy:
-    def __init__(self, name="Caterpie", hp=10, damage=2):
-        self.name = name
-        self.hp = hp
-        self.damage = damage
+class World:
+    def __init__(self, locations=data.location_list):
+        self.locations = [Location(*location) for location in locations]
 
 
 class Location:
-    def __init__(self, name, description, connections, inspectionables, visited=False):
+    def __init__(self, name, description, connections, npcs, inspectionables, visited=False):
         self.name = name
         self.description = description
         self.connections = connections
+        self.npcs = [NPC(*el) for el in npcs]
         self.inspectionables = inspectionables
         self.enemies = None
         self.visited = visited
@@ -105,11 +104,6 @@ class NPC:
         if self.current_line < len(self.lines) - 1:
             self.current_line += 1
         game.choice(hero, world)
-
-
-class World:
-    def __init__(self, locations=data.location_list):
-        self.locations = [Location(*location) for location in locations]
 
 
 class Hero:
@@ -150,7 +144,7 @@ class Hero:
 
     def interact(self, game, world):
         slow_print('What do you want to interact with?')
-        for n, item in enumerate(self.current_location.inspectionables, 1):
+        for n, item in enumerate(self.current_location.npcs + self.current_location.inspectionables, 1):
             slow_print(f'[{n}] {item.name}')
             print()
         try:
@@ -190,9 +184,8 @@ class Item:
         return
     
 
-prisoner_lines = [
-    'Wow!',
-    'Hi!',
-    'Bye!'
-]
-prisoner = Inspec('Prisoner', prisoner_lines)
+class Enemy:
+    def __init__(self, name="Caterpie", hp=10, damage=2):
+        self.name = name
+        self.hp = hp
+        self.damage = damage
