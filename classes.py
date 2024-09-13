@@ -97,11 +97,11 @@ class Hero:
         self.current_location = current_location
         self.enemy = None
 
-    def you_are(self, game):
+    def you_are_in(self, game):
         game.slow_print(f'You are in {self.current_location.name}.')    
 
     def look(self, game):
-        self.you_are(game)
+        self.you_are_in(game)
         game.slow_print(self.current_location.description)
     
     def go(self, game, world):
@@ -114,7 +114,7 @@ class Hero:
             if number in range(1, len(self.current_location.connections) + 1):
                 self.current_location = world.locations[self.current_location.connections[i - 1]]
                 if world.locations[world.locations.index(self.current_location)].visited:
-                    self.you_are(game)
+                    self.you_are_in(game)
                 else:
                     self.look(game)
                     world.locations[world.locations.index(self.current_location)].visited = True
