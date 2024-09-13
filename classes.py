@@ -20,7 +20,7 @@ class Game:
     
     def game_help(self):
         slow_print('You asked for help. No problem!')
-        slow_print(data.help_text)
+        slow_print(data.HELP_TEXT)
 
     def quit_game(self):
         slow_print('Thanks for playing World of CodeCraft! See you next time!\n')
