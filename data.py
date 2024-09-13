@@ -1,45 +1,48 @@
-location_list = [
-    ['Firewall Quarantine',
-     '''
-     It is hot in here. There is an old man sitting in the corner.
-     ''',
-     [1],
-     [
-        ('Prisoner',
-         [
-            'Wow!',
-            'Hi!',
-            'Bye!'
-         ]
-        ),
-        ('Sentinel',
-         [
-             'Stop!'
-         ]
-        )
-     ],
-     [
-        # inspectionables
-     ]
+LOCATION_LIST = [
+    [
+        'Firewall Quarantine',
+        '''
+        It is hot in here. There is an old man sitting in the corner.
+        ''',
+        [1],
+        [
+            (
+                'Prisoner',
+                [
+                    'Wow!',
+                    'Hi!',
+                    'Bye!'
+                ]
+            ),
+            (
+                'Sentinel',
+                [
+                    'Stop!'
+                ]
+            )
+        ],
+        [
+            # inspectionables
+        ]
     ],
     
     
-    ['Terminal Square',
-     '''
-     It is square and terminal.
-     ''',
-     # connections
-     [],
-     [
-        # npcs
-     ],
-     [
-        # inspectionables
-     ],
-     [
-         ('MissingNo', 10, 2)
-     ]
+    [
+        'Terminal Square',
+        '''
+        It is square and terminal.
+        ''',
+        [], # connections
+        [
+            # npcs
+        ],
+        [
+            # inspectionables
+        ],
+        [
+            ('MissingNo', 10, 2)
+        ]
     ] 
 
-    # Caique: fill in the locations
-    ]
+    # Caique: fill in the locations..
+]

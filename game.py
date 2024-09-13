@@ -21,7 +21,7 @@ classes.slow_print('''
     #####################################
 ''')
 
-# Caique: write intro
+# Caique: write intro...
 classes.slow_print('''
     Oh no! The Kingdom is in upheaval etc etc...
 '''

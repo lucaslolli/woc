@@ -79,7 +79,7 @@ class Game:
 
 
 class World:
-    def __init__(self, locations=data.location_list):
+    def __init__(self, locations=data.LOCATION_LIST):
         self.locations = [Location(*location) for location in locations]
 
 
