@@ -102,10 +102,10 @@ class Location:
 
 
 class Inspectionable:
-    def __init__(self, name, description, inspectionables=[]):
+    def __init__(self, name, description, items=[]):
         self.name = name
         self.description = description
-        self.inspectionables = inspectionables
+        self.items = items
 
 
 class NPC:

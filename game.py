@@ -28,5 +28,4 @@ classes.slow_print('''
 )
 
 hero.look()
-
 game.choice(hero, world)
