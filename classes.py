@@ -127,13 +127,13 @@ class Hero:
         places_to_go = self.current_location.connections
         if places_to_go:
             slow_print('Where do you want to go?')
-            for i, n in enumerate(places_to_go, 1):
-                slow_print(f'[{i}] {world.locations[n].name}')
+            for i, world_loc_num in enumerate(places_to_go):
+                slow_print(f'[{i}] {world.locations[world_loc_num].name}')
             print()
             try:
                 number = int(input())
-                if number in range(1, len(places_to_go) + 1):
-                    self.current_location = world.locations[places_to_go[i - 1]]
+                if number in range(len(places_to_go)):
+                    self.current_location = world.locations[places_to_go[number]]
                     if world.locations[world.locations.index(self.current_location)].visited:
                         self.you_are_in()
                     else:
