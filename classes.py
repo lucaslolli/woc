@@ -46,11 +46,11 @@ class Game:
                 case '1' | 'l' | 'L':
                     hero.look()
                 case '2' | 'g' | 'G':
-                    hero.go(self, world)
+                    hero.go(world)
                 case '3' | 'i' | 'I':
                     hero.interact(self, world)
                 case '4' | 'a' | 'A':
-                    hero.attack(hero.enemy, self)
+                    hero.attack(hero.enemy)
                 case '5' | 'q' | 'Q':
                     self.quit_game()
                 case '6':
@@ -68,6 +68,7 @@ class Enemy:
         self.name = name
         self.hp = hp
         self.damage = damage
+
 
 class Location:
     def __init__(self, name, description, connections, inspectionables, visited=False):
@@ -94,10 +95,10 @@ class Inspec:
 
 
 class NPC:
-    def __init__(self, name, lines):
+    def __init__(self, name, lines, current_line=0):
         self.name = name
         self.lines = lines
-        self.current_line = 0
+        self.current_line = current_line
 
     def action(self, game, hero, world):
         slow_print(f'{self.name} says:\n"{self.lines[self.current_line]}"')
