@@ -26,9 +26,8 @@ location_list = [
      '''
      It is square and terminal.
      ''',
-     [
-        # connections
-     ],
+     # connections
+     [],
      [
         # npcs
      ],

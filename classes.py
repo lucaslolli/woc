@@ -84,13 +84,13 @@ class World:
 
 
 class Location:
-    def __init__(self, name, description, connections, npcs, inspectionables, visited=False):
+    def __init__(self, name, description, connections, npcs=None, inspectionables=None, enemies=None, visited=False):
         self.name = name
         self.description = description
         self.connections = connections
         self.npcs = [NPC(*el) for el in npcs]
-        self.inspectionables = inspectionables
-        self.enemies = None
+        self.inspectionables = [Inspectionable(*el) for el in inspectionables]
+        self.enemies = enemies
         self.visited = visited
 
     def appear_enemy(self, hero):
