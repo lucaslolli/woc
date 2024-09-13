@@ -4,7 +4,7 @@ import random
 import data
 
 
-def slow_print(text, delay=0.01):
+def slow_print(text, delay=0.001):
     # delay = 0.018 # Correct delay. Comment to test the game quickly.
     for char in str(text):
         sys.stdout.write(char)
