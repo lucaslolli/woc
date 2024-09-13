@@ -24,11 +24,9 @@ Then press Enter to confirm.'''
 short_text = '''What do you want to do?
 [0] HELP   [1] LOOK   [2] GO   [3] INTERACT   [4] ATTACK   [5] QUIT
 '''
-# alternative:
-#  0 [H]ELP   1 [L]OOK   2 [G]O   3 [I]NTERACT   4 [A]TTACK   5 [Q]UIT
 
 location_list = [
-    ('Firewall Quarantine', 'It is hot in here.', [1], []),
-    ('Terminal Square', 'It is square and terminal.', [0], []) 
+    ['Firewall Quarantine', 'It is hot in here. There is an old man sitting in the corner.', [1], []],
+    ['Terminal Square', 'It is square and terminal.', [], []] 
     # Caique: fill in the locations
     ]

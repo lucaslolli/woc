@@ -8,8 +8,8 @@ class Game:
         self.count_six = count_six
         return
     
-    def slow_print(self, text, delay=0.018):
-        # delay=0 for quick test. Correct: delay=0.018
+    def slow_print(self, text, delay=0):
+        # delay = 0.018 # Correct delay. Comment to test the game quickly.
         for char in str(text):
             sys.stdout.write(char)
             sys.stdout.flush()
@@ -33,7 +33,7 @@ class Game:
             self.count_six += 1
 
     def choice(self, hero, world, text=data.short_text):
-        print(text)
+        self.slow_print(text)
         try:
             option = input()
             if option != 6:
@@ -46,7 +46,7 @@ class Game:
                 case '2' | 'g' | 'G':
                     hero.go(self, world)
                 case '3' | 'i' | 'I':
-                    hero.interact(self)
+                    hero.interact(self, world)
                 case '4' | 'a' | 'A':
                     hero.attack(hero.enemy, self)
                 case '5' | 'q' | 'Q':
@@ -56,8 +56,8 @@ class Game:
                 case _:
                     raise ValueError
         except ValueError:
-            print('You did not enter a valid number or letter. Please try again.')
-            print(text)
+            self.slow_print('You did not enter a valid number or letter. Please try again.')
+            self.slow_print(text)
         self.choice(hero, world)
 
 
@@ -68,11 +68,11 @@ class Enemy:
         self.damage = damage
 
 class Location:
-    def __init__(self, name, description, connections, items, visited=False):
+    def __init__(self, name, description, connections, inspectionables, visited=False):
         self.name = name
         self.description = description
         self.connections = connections
-        self.items = items
+        self.inspectionables = inspectionables
         self.enemies = None
         self.visited = visited
 
@@ -82,6 +82,26 @@ class Location:
             hero.enemy = Enemy()
             game.slow_print(f'A wild {hero.enemy.name} appears!')
         return
+
+
+class Inspec:
+    def __init__(self, name, description, inspectionables=[]):
+        self.name = name
+        self.description = description
+        self.inspectionables = inspectionables
+
+
+class NPC:
+    def __init__(self, name, lines):
+        self.name = name
+        self.lines = lines
+        self.current_line = 0
+
+    def action(self, game, hero, world):
+        game.slow_print(f'{self.name} says:\n"{self.lines[self.current_line]}"')
+        if self.current_line < len(self.lines) - 1:
+            self.current_line += 1
+        game.choice(hero, world)
 
 
 class World:
@@ -125,13 +145,14 @@ class Hero:
             game.slow_print('You did not enter a valid number.')
         
 
-    def interact(self, game):
+    def interact(self, game, world):
         game.slow_print('What do you want to interact with?')
-        for n, item in enumerate(self.current_location.items, 1):
-            game.slow_print(n, item.name)
+        for n, item in enumerate(self.current_location.inspectionables, 1):
+            game.slow_print(f'[{n}] {item.name}')
+            print()
         try:
-            chosen_item = self.current_location.items[int(input()) - 1]
-            chosen_item.action()
+            chosen_item = self.current_location.inspectionables[int(input()) - 1]
+            chosen_item.action(game, self, world)
         except (ValueError, IndexError):
             game.slow_print('You did not enter a valid number.')
     
@@ -164,3 +185,11 @@ class Item:
 
     def action(self):
         return
+    
+
+prisoner_lines = [
+    'Wow!',
+    'Hi!',
+    'Bye!'
+]
+prisoner = Inspec('Prisoner', prisoner_lines)
