@@ -86,7 +86,7 @@ class Location:
         return
 
 
-class Inspec:
+class Inspectionable:
     def __init__(self, name, description, inspectionables=[]):
         self.name = name
         self.description = description
