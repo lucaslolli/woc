@@ -1,10 +1,10 @@
 import random
 import data
-import sys 
-import time
 
 
 def slow_print(text, delay=0.001):
+    import sys 
+    import time
     # delay = 0.018 # Correct delay. Comment to test the game quickly.
     for char in str(text):
         sys.stdout.write(char)
@@ -120,26 +120,32 @@ class Hero:
     def look(self):
         self.you_are_in()
         slow_print(self.current_location.description)
+        if self.enemy:
+            slow_print(f'There is a hostile {self.enemy.name} in front of you.')
     
     def go(self, world):
-        slow_print('Where do you want to go?')
-        for i, n in enumerate(self.current_location.connections, 1):
-            slow_print(f'[{i}] {world.locations[n].name}')
-        print()
-        try:
-            number = int(input())
-            if number in range(1, len(self.current_location.connections) + 1):
-                self.current_location = world.locations[self.current_location.connections[i - 1]]
-                if world.locations[world.locations.index(self.current_location)].visited:
-                    self.you_are_in()
+        places_to_go = self.current_location.connections
+        if places_to_go:
+            slow_print('Where do you want to go?')
+            for i, n in enumerate(places_to_go, 1):
+                slow_print(f'[{i}] {world.locations[n].name}')
+            print()
+            try:
+                number = int(input())
+                if number in range(1, len(places_to_go) + 1):
+                    self.current_location = world.locations[places_to_go[i - 1]]
+                    if world.locations[world.locations.index(self.current_location)].visited:
+                        self.you_are_in()
+                    else:
+                        self.look()
+                        world.locations[world.locations.index(self.current_location)].visited = True
+                    self.current_location.appear_enemy(self)
                 else:
-                    self.look()
-                    world.locations[world.locations.index(self.current_location)].visited = True
-                self.current_location.appear_enemy(self)
-            else:
-                raise ValueError
-        except ValueError:
-            slow_print('You did not enter a valid number.')
+                    raise ValueError
+            except ValueError:
+                slow_print('You did not enter a valid number.')
+        else:
+            slow_print('There is nowhere to go.')
         
     def interact(self, game, world):
         slow_print('What do you want to interact with?')

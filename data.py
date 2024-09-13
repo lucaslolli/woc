@@ -43,7 +43,6 @@ location_list = [
     ], [
         # inspectionables
     ]] 
+    
     # Caique: fill in the locations
     ]
-
-
