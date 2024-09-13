@@ -150,7 +150,9 @@ class Hero:
         try:
             chosen_item = interactibles[int(input())]
             chosen_item.action(game, self, world)
-        except (ValueError, IndexError):
+        except ValueError:
+            slow_print('You did not enter a number.')
+        except IndexError:
             slow_print('You did not enter a valid number.')
     
     def attack(self, enemy):
