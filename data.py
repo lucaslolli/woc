@@ -25,7 +25,7 @@ Press:
 [5] or [Q] to QUIT the game
 Then press Enter to confirm.'''
 
-LOCATION_LIST = [
+location_list = [
     ['Firewall Quarantine', 'It is hot in here. There is an old man sitting in the corner.', [1], [
         ('Prisoner', [
             'Wow!',
