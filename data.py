@@ -1,18 +1,3 @@
-import sys 
-import time
-
-def slow_print(text, delay=0.001):
-    # delay = 0.018 # Correct delay. Comment to test the game quickly.
-    for char in str(text):
-        sys.stdout.write(char)
-        sys.stdout.flush()
-        time.sleep(delay)
-    print()
-
-
-
-
-
 welcome = '''
     #####################################\n
     #   Welcome to World of CodeCraft!  #\n

@@ -1,7 +1,7 @@
-import sys 
-import time
 import random
 import data
+import sys 
+import time
 
 
 def slow_print(text, delay=0.001):
