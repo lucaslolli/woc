@@ -13,6 +13,21 @@ def slow_print(text, delay=0.001):
     print()
 
 
+SHORT_TEXT = '''What do you want to do?
+[0] HELP   [1] LOOK   [2] GO   [3] INTERACT   [4] ATTACK   [5] QUIT
+'''
+
+HELP_TEXT = '''Below are the commands in the game.
+Press:
+[0] or [H] to display this HELP
+[1] or [L] to LOOK around
+[2] or [G] to GO to a different area
+[3] or [I] to INTERACT with people and objects
+[4] or [A] to ATTACK the current enemy
+[5] or [Q] to QUIT the game
+Then press Enter to confirm.'''
+
+
 class Game:
     def __init__(self, count_six=0):
         self.count_six = count_six
@@ -20,7 +35,7 @@ class Game:
     
     def game_help(self):
         slow_print('You asked for help. No problem!')
-        slow_print(data.HELP_TEXT)
+        slow_print(HELP_TEXT)
 
     def quit_game(self):
         slow_print('Thanks for playing World of CodeCraft! See you next time!\n')
@@ -34,7 +49,7 @@ class Game:
             slow_print('There is no option 6. Or is there?')
             self.count_six += 1
 
-    def choice(self, hero, world, text=data.SHORT_TEXT):
+    def choice(self, hero, world, text=SHORT_TEXT):
         slow_print(text)
         try:
             option = input()
