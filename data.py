@@ -13,7 +13,9 @@ location_list = [
          ]
         ),
         ('Sentinel',
-         []
+         [
+             'Stop!'
+         ]
         )
      ],
      [
@@ -33,6 +35,9 @@ location_list = [
      ],
      [
         # inspectionables
+     ],
+     [
+         ('MissingNo', 10, 2)
      ]
     ] 
 

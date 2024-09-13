@@ -90,15 +90,15 @@ class Location:
         self.connections = connections
         self.npcs = [NPC(*el) for el in npcs]
         self.inspectionables = [Inspectionable(*el) for el in inspectionables]
-        self.enemies = enemies
+        self.enemies = [Enemy(*el) for el in enemies] if enemies else None
         self.visited = visited
 
     def appear_enemy(self, hero):
-        die_roll = random.randint(0, 10)
-        if die_roll < 5:
-            hero.enemy = Enemy()
-            slow_print(f'A wild {hero.enemy.name} appears!')
-        return
+        if self.enemies:
+            die_roll = random.randint(0, 10)
+            if die_roll < 5:
+                hero.enemy = self.enemies[random.randint(0, len(self.enemies) - 1)]
+                slow_print(f'A wild {hero.enemy.name} appears!')
 
 
 class Inspectionable:
@@ -208,7 +208,7 @@ class Item:
     
 
 class Enemy:
-    def __init__(self, name="Caterpie", hp=10, damage=2):
+    def __init__(self, name, hp, damage):
         self.name = name
         self.hp = hp
         self.damage = damage
