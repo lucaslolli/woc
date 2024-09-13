@@ -141,14 +141,14 @@ class Hero:
         except ValueError:
             slow_print('You did not enter a valid number.')
         
-
     def interact(self, game, world):
         slow_print('What do you want to interact with?')
-        for n, item in enumerate(self.current_location.npcs + self.current_location.inspectionables, 1):
+        interactibles = self.current_location.npcs + self.current_location.inspectionables
+        for n, item in enumerate(interactibles, 1):
             slow_print(f'[{n}] {item.name}')
             print()
         try:
-            chosen_item = self.current_location.inspectionables[int(input()) - 1]
+            chosen_item = (interactibles)[int(input()) - 1]
             chosen_item.action(game, self, world)
         except (ValueError, IndexError):
             slow_print('You did not enter a valid number.')
