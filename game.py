@@ -20,10 +20,13 @@ classes.slow_print('''
     #    Caique Fabris & Lou Espiral    #\n
     #####################################
 ''')
+
 # Caique: write intro
 classes.slow_print('''
     Oh no! The Kingdom is in upheaval etc etc...
 '''
 )
+
 hero.look()
+
 game.choice(hero, world)

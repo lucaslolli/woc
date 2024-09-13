@@ -19,12 +19,12 @@ SHORT_TEXT = '''What do you want to do?
 
 HELP_TEXT = '''Below are the commands in the game.
 Press:
-[0] or [H] to display this HELP
-[1] or [L] to LOOK around
-[2] or [G] to GO to a different area
-[3] or [I] to INTERACT with people and objects
-[4] or [A] to ATTACK the current enemy
-[5] or [Q] to QUIT the game
+[0] to display this HELP
+[1] to LOOK around and get a description of your current area
+[2] to GO to a different area
+[3] to INTERACT with people and objects
+[4] to ATTACK the enemy at the current area, if there is any
+[5] to QUIT the game
 Then press Enter to confirm.'''
 
 
