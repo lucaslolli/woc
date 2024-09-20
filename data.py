@@ -22,7 +22,9 @@ LOCATION_LIST = [
             )
         ],
         [
-            # inspectionables
+            (
+                'Door',
+                'descrip...')
         ]
     ],
     

@@ -102,9 +102,9 @@ class Location:
 
 
 class Inspectionable:
-    def __init__(self, name, description, items=[]):
+    def __init__(self, name, interaction_text, items=[]):
         self.name = name
-        self.description = description
+        self.description = interaction_text
         self.items = items
 
 
