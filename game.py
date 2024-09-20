@@ -23,7 +23,13 @@ classes.slow_print('''
 
 # Caique: write intro...
 classes.slow_print('''
-    Oh no! The Kingdom is in upheaval etc etc...
+    Your eyes open to a dim, flickering light.
+    You lie on your back, warm stone pressing against you.
+    A headache pulses as the distant hum of machinery slowlly fills your mind.
+    Memories feel scattered, like broken lines of code.
+    As your vision sharpens, you see iron bars surrounding you, etched with pulsing runes.
+
+    What is this place? Why am I here?
 '''
 )
 
