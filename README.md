@@ -1,6 +1,6 @@
 # 🌍 World of CodeCraft 🎮
 
-Welcome to *World of CodeCraft*, an immersive text-based adventure currently in development by Caique Fabris and Lou Espiral. This game invites players to embark on a journey through the kingdom of Jupterya, where they will navigate a world rich in lore, challenges, and discoveries.
+Welcome to *World of CodeCraft*, an immersive text-based adventure currently in development by Caique Fabris and Lou Espiral (Lucas Lolli Savi). This game invites players to embark on a journey through the kingdom of Jupterya, where they will navigate a world rich in lore, challenges, and discoveries.
 
 ## ⚔️ Game Overview
 
