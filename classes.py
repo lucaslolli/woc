@@ -142,7 +142,7 @@ class Hero:
         places_to_go = self.current_location.connections
         if places_to_go:
             slow_print('Where do you want to go?')
-            for i, world_loc_num in enumerate(places_to_go):
+            for i, world_loc_num in enumerate(places_to_go, 1):
                 slow_print(f'[{i}] {world.locations[world_loc_num].name}')
             print()
             try:
@@ -165,7 +165,7 @@ class Hero:
     def interact(self, game, world):
         slow_print('What do you want to interact with?')
         interactibles = self.current_location.npcs + self.current_location.inspectionables
-        for n, item in enumerate(interactibles):
+        for n, item in enumerate(interactibles, 1):
             slow_print(f'[{n}] {item.name}')
         print()
         try:
