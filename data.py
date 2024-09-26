@@ -57,11 +57,14 @@ Although unmistakeable, this fascination is as of right now only a mystery..."""
         [
             (
                 'Reinforced Metal Door',
-                '''A massive, imposing door of reinforced metal.
-        It is adorned with runes that are somewhat familiar to you,
-        but their meaning remains elusive.
-        Three distinct locks are embedded into the frame, each uniquely designed.
-        It won't budge without the proper key, or keys...''')
+                [
+                    '''A massive, imposing door of reinforced metal.
+It is adorned with runes that are somewhat familiar to you,
+but their meaning remains elusive.
+Three distinct locks are embedded into the frame, each uniquely designed.
+It won't budge without the proper key, or keys...'''
+                ]
+            )
         ]
     ],
     
