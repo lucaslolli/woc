@@ -59,7 +59,7 @@ class Game:
                 case '0' | 'h' | 'H':
                     self.game_help()
                 case '1' | 'l' | 'L':
-                    hero.look()
+                    hero.look(world)
                 case '2' | 'g' | 'G':
                     hero.go(world)
                 case '3' | 'i' | 'I':
@@ -126,8 +126,9 @@ class Hero:
     def you_are_in(self):
         slow_print(f'You are in {self.current_location.name}.')    
 
-    def look(self):
-        self.you_are_in()
+    def look(self, world):
+        if self.current_location.visited == True:
+            self.you_are_in()
         slow_print(self.current_location.description)
         if self.enemy:
             slow_print(f'There is a hostile {self.enemy.name} in front of you.')
