@@ -140,7 +140,7 @@ class Hero:
                 slow_print(f'[{i}] {world.locations[world_loc_num].name}')
             print()
             try:
-                number = int(input())
+                number = int(input()) - 1
                 if number in range(len(places_to_go)):
                     self.current_location = world.locations[places_to_go[number]]
                     if world.locations[world.locations.index(self.current_location)].visited:
@@ -163,7 +163,7 @@ class Hero:
             slow_print(f'[{n}] {item.name}')
         print()
         try:
-            chosen_item = interactibles[int(input())]
+            chosen_item = interactibles[int(input()) - 1]
             chosen_item.action(game, self, world)
         except ValueError:
             slow_print('You did not enter a number.')
