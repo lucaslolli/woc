@@ -194,7 +194,7 @@ class Hero:
                 self.enemy = None
             
         else:
-            slow_print('\nThere is no enemy to attack.')
+            slow_print('There is no enemy to attack.')
 
 
 
