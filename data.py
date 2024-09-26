@@ -1,8 +1,7 @@
 LOCATION_LIST = [
     [
         'Firewall Quarantine',
-        """
-The air is stifling and thick in this oppressive quarantine,
+        """The air is stifling and thick in this oppressive quarantine,
 heavy with the heat radiating from the glowing runes etched into the stone walls.
 Sweat beads on your skin as the temperature makes every breath feel like a struggle.
 A suffocating silence is occasionally broken by the crackle of energy shields
