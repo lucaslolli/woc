@@ -88,8 +88,8 @@ class Location:
         self.name = name
         self.description = description
         self.connections = connections
-        self.npcs = [NPC(*el) for el in npcs]
-        self.inspectionables = [Inspectionable(*el) for el in inspectionables]
+        self.npcs = [Interactible(*el) for el in npcs]
+        self.inspectionables = [Interactible(*el) for el in inspectionables]
         self.enemies = [Enemy(*el) for el in enemies] if enemies else None
         self.visited = visited
 
@@ -101,18 +101,12 @@ class Location:
                 slow_print(f'A wild {hero.enemy.name} appears!')
 
 
-class Inspectionable:
-    def __init__(self, name, interaction_text, items=[]):
-        self.name = name
-        self.description = interaction_text
-        self.items = items
-
-
-class NPC:
-    def __init__(self, name, lines, current_line=0):
+class Interactible:
+    def __init__(self, name, lines, current_line=0, items=[]):
         self.name = name
         self.lines = lines
         self.current_line = current_line
+        self.items = items
 
     def action(self, game, hero, world):
         slow_print(self.lines[self.current_line])
