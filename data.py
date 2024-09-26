@@ -24,7 +24,7 @@ Its full-body metallic armor makes it impossible to tell if it's even human.
 The sentinel's head scans the area with an unwavering gaze,
 ensuring that escape is not an option.
         """,
-        [1],
+        [],
         [
             (
                 'Prisoner',
