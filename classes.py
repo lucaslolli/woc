@@ -167,7 +167,6 @@ class Hero:
         interactibles = self.current_location.npcs + self.current_location.inspectionables
         for n, item in enumerate(interactibles):
             slow_print(f'[{n}] {item.name}')
-            # print()
         try:
             chosen_item = interactibles[int(input())]
             chosen_item.action(game, self, world)
