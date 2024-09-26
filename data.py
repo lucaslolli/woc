@@ -29,7 +29,7 @@ ensuring that escape is not an option.
             (
                 'Prisoner',
                 [
-                    '''You are... Aric Dataforge, right? I wasn't sure before, but now I can see...
+                    '''"You are... Aric Dataforge, right? I wasn't sure before, but now I can see...
 They put me in a cell with the likes of you...?
 
 This is all your fault! All that is happening to our kingdom, it's...
@@ -40,7 +40,7 @@ The way you can sense how Data flows through everything, the powerful Pycharms y
 Your kind wielded forces most could barely comprehend, but now it's all gone...
 Your abilities... They served no purpose but deceit...
 
-Leave me be, Data Manipulator. I want nothing to do with you...''',
+Leave me be, Data Manipulator. I want nothing to do with you..."''',
                     'Hi!',
                     'Bye!'
                 ]

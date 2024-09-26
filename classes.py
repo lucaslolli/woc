@@ -115,7 +115,7 @@ class NPC:
         self.current_line = current_line
 
     def action(self, game, hero, world):
-        slow_print(f'{self.name} says:\n"{self.lines[self.current_line]}"')
+        slow_print(self.lines[self.current_line])
         if self.current_line < len(self.lines) - 1:
             self.current_line += 1
         game.choice(hero, world)
