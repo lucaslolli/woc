@@ -10,26 +10,24 @@ game = classes.Game()
 world = classes.World()
 bestiary = None
 hero = classes.Hero(current_location=world.locations[0])
-world.locations[0].visited = True
+# world.locations[0].visited = True
 
 
 classes.slow_print('''
-    #####################################\n
-    #   Welcome to World of CodeCraft!  #\n
-    #     A text adventure game by      #\n
-    #    Caique Fabris & Lou Espiral    #\n
-    #####################################
+#####################################\n
+#   Welcome to World of CodeCraft!  #\n
+#     A text adventure game by      #\n
+#    Caique Fabris & Lou Espiral    #\n
+#####################################
 ''')
 
-# Caique: write intro...
-classes.slow_print('''
-    Your eyes open to a dim, flickering light.
-    You lie on your back, warm stone pressing against you.
-    A headache pulses as the distant hum of machinery slowlly fills your mind.
-    Memories feel scattered, like broken lines of code.
-    As your vision sharpens, you see iron bars surrounding you, etched with pulsing runes.
+classes.slow_print('''Your eyes open to a dim, flickering light.
+You lie on your back, warm stone pressing against you.
+A headache pulses as the distant hum of machinery slowlly fills your mind.
+Memories feel scattered, like broken lines of code.
+As your vision sharpens, you see iron bars surrounding you, etched with pulsing runes.
 
-    What is this place? Why am I here?
+"What is this place? Why am I here?"
 '''
 )
 
